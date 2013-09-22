@@ -22,6 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.esbee.SoundLibraryActivity"
+            android:label="@string/title_activity_sound_library"
+            android:parentActivityName="com.example.esbee.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.esbee.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

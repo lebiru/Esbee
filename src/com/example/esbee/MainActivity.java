@@ -19,7 +19,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
 		setContentView(R.layout.activity_main);
 
 		//Set the mp1 to the default sound
-		mp1 = MediaPlayer.create(this,  R.raw.sound);
+		mp1 = MediaPlayer.create(this,  R.raw.one);
 		
 		//link the virtual button with the display button (?) not sure on this
 		final Button button1 = (Button) findViewById(R.id.button1);

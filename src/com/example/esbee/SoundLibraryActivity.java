@@ -1,21 +1,48 @@
 package com.example.esbee;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
 import android.os.Build;
 
-public class SoundLibraryActivity extends Activity {
+public class SoundLibraryActivity extends Activity implements View.OnClickListener{
 
+	MediaPlayer soundFive;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sound_library);
 		// Show the Up button in the action bar.
 		setupActionBar();
+		
+		soundFive = MediaPlayer.create(this, R.raw.five);
+		
+		//link present buttons to virtual buttons
+		final Button presentBtn1 = (Button)findViewById(R.id.present1);
+		
+		//onClickListener
+		presentBtn1.setOnClickListener(this);
+		
+		
+	}
+	
+	public void onClick(View v)
+	{
+		switch(v.getId())
+		{
+			//If button1 was clicked, play the sound
+			case R.id.present1:
+			soundFive.start();
+			break;
+			
+		}
 	}
 
 	/**

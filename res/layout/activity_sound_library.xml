@@ -9,8 +9,26 @@
     tools:context=".SoundLibraryActivity" >
 
     <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
+
+    <Button
+        android:id="@+id/present1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="27dp"
+        android:text="@string/present1" />
+
+    <Button
+        android:id="@+id/present2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/present1"
+        android:layout_below="@+id/present1"
+        android:text="@string/present2" />
 
 </RelativeLayout>

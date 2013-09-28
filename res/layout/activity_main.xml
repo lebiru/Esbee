@@ -56,13 +56,13 @@
         android:text="@string/button3" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/soundLibrary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button4"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="47dp"
         android:onClick="openSoundLibrary"
-        android:text="Sound Library" />
+        android:text="@string/soundLibrary" />
 
 </RelativeLayout>

@@ -30,6 +30,13 @@ public class SoundLibraryActivity extends Activity implements View.OnClickListen
 		//onClickListener
 		presentBtn1.setOnClickListener(this);
 		
+		/**
+		 * On create, it should load up all the Packages by simply using the PresentPackage 
+		 * constructor. 
+		 */
+		
+		// Button present1button = PresentPackage(title, btnlb1, btnlb2, btnlb3, btnlb4, 1,2,3,4);
+		
 		
 	}
 	
@@ -43,6 +50,12 @@ public class SoundLibraryActivity extends Activity implements View.OnClickListen
 			break;
 			
 		}
+		
+		/**
+		 * When the user clicks the package, it should reload MainActivity buttons 
+		 * with the new sounds, info, and everything. Then it should take the user
+		 * to the MainActivity screen.
+		 */
 	}
 
 	/**

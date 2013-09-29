@@ -1,7 +1,6 @@
 package com.example.esbee;
 
-import android.media.MediaPlayer;
-import android.view.View;
+
 
 public class PresentPackage 
 {
@@ -24,24 +23,24 @@ public class PresentPackage
 	String buttonFourLabel = "Initial four";
 
 	// The mediaPlayer objects that are used to play the mp3 files
-	MediaPlayer soundOne, soundTwo, soundThree, soundFour; 
+	int soundOne, soundTwo, soundThree, soundFour; 
 	
 	// Constructor method for PresentPackage
-	public PresentPackage(View v)
+	public PresentPackage()
 	{
 		
 		// The R id for the mp3 files. Default values
-		this.soundOne = MediaPlayer.create(v.getContext(),  R.raw.one);
-		this.soundTwo = MediaPlayer.create(v.getContext(),  R.raw.two);
-		this.soundThree = MediaPlayer.create(v.getContext(),  R.raw.three);
-		this.soundFour = MediaPlayer.create(v.getContext(),  R.raw.four);
+		this.soundOne = R.raw.five;
+		this.soundTwo = R.raw.six;
+		this.soundThree = R.raw.seven;
+		this.soundFour = R.raw.eight;
 		
 		this.packageTitle = "Test Package Title";
 		
-		this.buttonOneLabel = "label 1";
-		this.buttonTwoLabel = "label 2";
-		this.buttonThreeLabel = "label 3";
-		this.buttonFourLabel = "label 4";
+		this.buttonOneLabel = "label 5";
+		this.buttonTwoLabel = "label 6";
+		this.buttonThreeLabel = "label 7";
+		this.buttonFourLabel = "label 8";
 	}
 	
 	public String getPkgTtl()
@@ -54,7 +53,7 @@ public class PresentPackage
 		this.packageTitle = newPackageTitle;
 	}
 	
-	public MediaPlayer getBtnSound(int buttonNumber)
+	public int getBtnSound(int buttonNumber)
 	{
 		switch (buttonNumber)
 		{
@@ -72,11 +71,11 @@ public class PresentPackage
 			
 			default:
 			System.out.println("Error: buttonNumber out of range (getBtnSound)");
-			return null; //should probably return an oops sound here
+			return R.raw.one; //should probably return an oops sound here
 		}
 	}
 	
-	public MediaPlayer setBtnSound(MediaPlayer newSound, int buttonNumber)
+	public String setBtnSound(int newSound, int buttonNumber)
 	{
 		switch (buttonNumber)
 		{

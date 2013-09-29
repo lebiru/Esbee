@@ -13,17 +13,18 @@ public class MainActivity extends Activity implements View.OnClickListener{
 	//Declare the MediaPlayer for the sound object mp1
 	MediaPlayer soundOne, soundTwo, soundThree, soundFour;
 	
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		System.out.println("OnCreate accessed");
 		//Set the sounds to the default sound
-		soundOne = MediaPlayer.create(this,  R.raw.one);
+		soundOne = MediaPlayer.create(this, R.raw.one);
 		soundTwo = MediaPlayer.create(this,  R.raw.two);
 		soundThree = MediaPlayer.create(this,  R.raw.three);
 		soundFour = MediaPlayer.create(this,  R.raw.four);
+
 		
 		//link the virtual button with the display button (?) not sure on this
 		final Button button1 = (Button) findViewById(R.id.button1);
@@ -37,6 +38,21 @@ public class MainActivity extends Activity implements View.OnClickListener{
 		button2.setOnClickListener(this);
 		button3.setOnClickListener(this);
 		button4.setOnClickListener(this);
+		
+		//Reload the new sounds/labels
+		Bundle extras = getIntent().getExtras();
+		if (extras != null)
+		{
+			soundOne = MediaPlayer.create(this, extras.getInt("newOnesound"));
+			soundTwo = MediaPlayer.create(this, extras.getInt("newTwosound"));
+			soundThree = MediaPlayer.create(this, extras.getInt("newThreesound"));
+			soundFour = MediaPlayer.create(this, extras.getInt("newFoursound"));
+			
+			button1.setText(extras.getCharSequence("btnOneLbl"));
+			button2.setText(extras.getCharSequence("btnTwoLbl"));
+			button3.setText(extras.getCharSequence("btnThreeLbl"));
+			button4.setText(extras.getCharSequence("btnFourLbl"));
+		}
 		
 	}
 

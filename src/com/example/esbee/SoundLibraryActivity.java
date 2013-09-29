@@ -1,41 +1,49 @@
 package com.example.esbee;
 
-import android.media.MediaPlayer;
-import android.os.Bundle;
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.support.v4.app.NavUtils;
-import android.annotation.TargetApi;
-import android.os.Build;
+
+/**
+ * The SoundLibraryActivity holds the constructors for ALL the sounds, button labels, and package 
+ * titles. This is where you should declare your set of packages of sounds. Example: If you 
+ * wanted to initialize a new drum library, you initialize the package title to "Cool Drum Sounds"
+ * the button labels to reflect what each instrument is (ie snare, bass, cowbell), and the
+ * actual sounds the title of the mp3 filename which should be located in its own folder under
+ * "raw". The files should be in mp3 format. 
+ * @author Biru
+ *
+ */
 
 public class SoundLibraryActivity extends Activity implements View.OnClickListener{
-
-	MediaPlayer soundFive;
+	
+	PresentPackage testPresentPackage = new PresentPackage();
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) 
+	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sound_library);
 		// Show the Up button in the action bar.
 		setupActionBar();
 		
-		soundFive = MediaPlayer.create(this, R.raw.five);
 		
 		//link present buttons to virtual buttons
 		final Button presentBtn1 = (Button)findViewById(R.id.present1);
+		presentBtn1.setText(testPresentPackage.getPkgTtl());
+		
 		
 		//onClickListener
 		presentBtn1.setOnClickListener(this);
 		
-		/**
-		 * On create, it should load up all the Packages by simply using the PresentPackage 
-		 * constructor. 
-		 */
-		
-		// Button present1button = PresentPackage(title, btnlb1, btnlb2, btnlb3, btnlb4, 1,2,3,4);
+	
 		
 		
 	}
@@ -44,11 +52,19 @@ public class SoundLibraryActivity extends Activity implements View.OnClickListen
 	{
 		switch(v.getId())
 		{
-			//If button1 was clicked, play the sound
+			//If present1 was clicked, MainActivity should reload with new sounds, title, and labels.
 			case R.id.present1:
-			soundFive.start();
-			break;
+			Intent i = new Intent(this, MainActivity.class);
+			i.putExtra("newOnesound", testPresentPackage.soundOne);
+			i.putExtra("newTwosound", testPresentPackage.soundTwo);
+			i.putExtra("newThreesound", testPresentPackage.soundThree);
+			i.putExtra("newFoursound", testPresentPackage.soundFour);
+			i.putExtra("btnOneLbl", testPresentPackage.buttonOneLabel);
+			i.putExtra("btnTwoLbl", testPresentPackage.buttonTwoLabel);
+			i.putExtra("btnThreeLbl", testPresentPackage.buttonThreeLabel);
+			i.putExtra("btnFourLbl", testPresentPackage.buttonFourLabel);
 			
+			startActivity(i);
 		}
 		
 		/**

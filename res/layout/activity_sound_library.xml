@@ -31,4 +31,13 @@
         android:layout_below="@+id/present1"
         android:text="@string/present2" />
 
+    <Button
+        android:id="@+id/present3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/present2"
+        android:layout_alignRight="@+id/present2"
+        android:layout_below="@+id/present2"
+        android:text="@string/present3" />
+
 </RelativeLayout>

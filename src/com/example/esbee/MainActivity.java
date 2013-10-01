@@ -18,12 +18,11 @@ public class MainActivity extends Activity implements View.OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		System.out.println("OnCreate accessed");
 		//Set the sounds to the default sound
-		soundOne = MediaPlayer.create(this, R.raw.one);
-		soundTwo = MediaPlayer.create(this,  R.raw.two);
-		soundThree = MediaPlayer.create(this,  R.raw.three);
-		soundFour = MediaPlayer.create(this,  R.raw.four);
+		soundOne = MediaPlayer.create(this, R.raw.hihat);
+		soundTwo = MediaPlayer.create(this,  R.raw.snare);
+		soundThree = MediaPlayer.create(this,  R.raw.bass);
+		soundFour = MediaPlayer.create(this,  R.raw.bass2);
 
 		
 		//link the virtual button with the display button (?) not sure on this
@@ -31,6 +30,11 @@ public class MainActivity extends Activity implements View.OnClickListener{
 		final Button button2 = (Button) findViewById(R.id.button2);
 		final Button button3 = (Button) findViewById(R.id.button3);
 		final Button button4 = (Button) findViewById(R.id.button4);
+		
+		button1.setText("hihat");
+		button2.setText("snare");
+		button3.setText("bass");
+		button4.setText("bass2");
 		
 		
 		//have the virtual button listen for clicks

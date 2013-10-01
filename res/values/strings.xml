@@ -10,7 +10,8 @@
     <string name="button4">4</string>
     <string name="title_activity_sound_library">SoundLibraryActivity</string>
     <string name="hello_world">Choose a Present</string>
-	<string name="present1">Present 1</string>
-	<string name="present2">Present 2</string>
+	<string name="present1">Drums</string>
+	<string name="present2">Movies</string>
+	<string name="present3">Digital</string>
 	<string name="soundLibrary">Sound Library</string>
 </resources>

@@ -23,8 +23,11 @@ import android.widget.Button;
  */
 
 public class SoundLibraryActivity extends Activity implements View.OnClickListener{
+		
+	PresentPackage drumPkg = new PresentPackage();
+	PresentPackage moviePkg = new PresentPackage();
+	PresentPackage digitalPkg = new PresentPackage();
 	
-	PresentPackage testPresentPackage = new PresentPackage();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -34,37 +37,78 @@ public class SoundLibraryActivity extends Activity implements View.OnClickListen
 		// Show the Up button in the action bar.
 		setupActionBar();
 		
+		drumPkg.setBtnLbl("hihat", "snare", "Bass 1", "Bass 2");
+		drumPkg.setBtnSound(R.raw.hihat, R.raw.snare, R.raw.bass, R.raw.bass2);
+		drumPkg.setPkgTtl("Drum Set");
+		
+		moviePkg.setBtnLbl("applause", "boo", "rimshot", "wilhelm");
+		moviePkg.setBtnSound(R.raw.applause, R.raw.boo, R.raw.rimshot, R.raw.wilhelm);
+		moviePkg.setPkgTtl("Movies");
+		
+		digitalPkg.setBtnLbl("95", "dialup", "ps1", "mac");
+		digitalPkg.setBtnSound(R.raw.windows, R.raw.dialup, R.raw.ps1, R.raw.mac);
+		digitalPkg.setPkgTtl("Digital");
 		
 		//link present buttons to virtual buttons
 		final Button presentBtn1 = (Button)findViewById(R.id.present1);
-		presentBtn1.setText(testPresentPackage.getPkgTtl());
+		presentBtn1.setText(drumPkg.getPkgTtl());
 		
+		final Button presentBtn2 = (Button)findViewById(R.id.present2);
+		presentBtn2.setText(moviePkg.getPkgTtl());
+		
+		final Button presentBtn3 = (Button)findViewById(R.id.present3);
+		presentBtn3.setText(digitalPkg.getPkgTtl());
+
 		
 		//onClickListener
 		presentBtn1.setOnClickListener(this);
-		
-	
-		
+		presentBtn2.setOnClickListener(this);
+		presentBtn3.setOnClickListener(this);
 		
 	}
 	
 	public void onClick(View v)
 	{
+		Intent i = new Intent(this, MainActivity.class);
+		
 		switch(v.getId())
 		{
-			//If present1 was clicked, MainActivity should reload with new sounds, title, and labels.
-			case R.id.present1:
-			Intent i = new Intent(this, MainActivity.class);
-			i.putExtra("newOnesound", testPresentPackage.soundOne);
-			i.putExtra("newTwosound", testPresentPackage.soundTwo);
-			i.putExtra("newThreesound", testPresentPackage.soundThree);
-			i.putExtra("newFoursound", testPresentPackage.soundFour);
-			i.putExtra("btnOneLbl", testPresentPackage.buttonOneLabel);
-			i.putExtra("btnTwoLbl", testPresentPackage.buttonTwoLabel);
-			i.putExtra("btnThreeLbl", testPresentPackage.buttonThreeLabel);
-			i.putExtra("btnFourLbl", testPresentPackage.buttonFourLabel);
-			
+
+		//If present1 was clicked, MainActivity should reload with new sounds, title, and labels.
+		case R.id.present1:
+			i.putExtra("newOnesound", drumPkg.soundOne);
+			i.putExtra("newTwosound", drumPkg.soundTwo);
+			i.putExtra("newThreesound", drumPkg.soundThree);
+			i.putExtra("newFoursound", drumPkg.soundFour);
+			i.putExtra("btnOneLbl", drumPkg.buttonOneLabel);
+			i.putExtra("btnTwoLbl", drumPkg.buttonTwoLabel);
+			i.putExtra("btnThreeLbl", drumPkg.buttonThreeLabel);
+			i.putExtra("btnFourLbl", drumPkg.buttonFourLabel);
 			startActivity(i);
+
+		case R.id.present2:
+			i.putExtra("newOnesound", moviePkg.soundOne);
+			i.putExtra("newTwosound", moviePkg.soundTwo);
+			i.putExtra("newThreesound", moviePkg.soundThree);
+			i.putExtra("newFoursound", moviePkg.soundFour);
+			i.putExtra("btnOneLbl", moviePkg.buttonOneLabel);
+			i.putExtra("btnTwoLbl", moviePkg.buttonTwoLabel);
+			i.putExtra("btnThreeLbl", moviePkg.buttonThreeLabel);
+			i.putExtra("btnFourLbl", moviePkg.buttonFourLabel);
+			startActivity(i);
+
+		case R.id.present3:
+			i.putExtra("newOnesound", digitalPkg.soundOne);
+			i.putExtra("newTwosound", digitalPkg.soundTwo);
+			i.putExtra("newThreesound", digitalPkg.soundThree);
+			i.putExtra("newFoursound", digitalPkg.soundFour);
+			i.putExtra("btnOneLbl", digitalPkg.buttonOneLabel);
+			i.putExtra("btnTwoLbl", digitalPkg.buttonTwoLabel);
+			i.putExtra("btnThreeLbl", digitalPkg.buttonThreeLabel);
+			i.putExtra("btnFourLbl", digitalPkg.buttonFourLabel);
+			startActivity(i);
+
+			
 		}
 		
 		/**

@@ -75,26 +75,12 @@ public class PresentPackage
 		}
 	}
 	
-	public String setBtnSound(int newSound, int buttonNumber)
+	public void setBtnSound(int sound1, int sound2, int sound3, int sound4)
 	{
-		switch (buttonNumber)
-		{
-			case 1:
-			this.soundOne = newSound;
-		
-			case 2:
-			this.soundTwo = newSound;
-			
-			case 3:
-			this.soundThree = newSound;
-			
-			case 4:
-			this.soundFour = newSound;
-			
-			default:
-			System.out.println("Error: buttonNumber out of range: " + buttonNumber + " (setBtnSound)");
-			return null; //should probably put an oops sound here
-		}
+		this.soundOne = sound1;
+		this.soundTwo = sound2;
+		this.soundThree = sound3;
+		this.soundFour = sound4;
 	}
 	
 	//Argument is the number of the button, and you'll get the package button label.
@@ -120,30 +106,12 @@ public class PresentPackage
 		}	
 	}
 	
-	public void setBtnLbl(String newButtonLabel, int buttonNumber)
+	public void setBtnLbl(String label1, String label2, String label3, String label4)
 	{
-		switch (buttonNumber)
-		{
-			case 1:
-			this.buttonOneLabel = newButtonLabel;
-			break;
-		
-			case 2:
-			this.buttonTwoLabel = newButtonLabel;
-			break;
-			
-			case 3:
-			this.buttonThreeLabel = newButtonLabel;
-			break;
-			
-			case 4:
-			this.buttonFourLabel = newButtonLabel;
-			break;
-			
-			default:
-			System.out.println("Error in setting a new button label: buttonNumber out of range: " + newButtonLabel );
-			break;
-		}	
+		this.buttonOneLabel = label1;
+		this.buttonTwoLabel = label2;
+		this.buttonThreeLabel = label3;
+		this.buttonFourLabel = label4;
 	}
 	
 

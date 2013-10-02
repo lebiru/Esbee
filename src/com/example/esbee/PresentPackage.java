@@ -12,7 +12,7 @@ public class PresentPackage
 	 */
 
 	//This is the title of the whole package. ie "Drum Set" if the package contains drum sounds.
-	String packageTitle = "Initial Package Title";
+	String packageTitle = "Default Constructor Title";
 
 	// The button labels for the buttons. 
 	// one -> upper left, two -> upper right

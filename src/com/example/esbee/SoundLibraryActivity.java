@@ -75,7 +75,7 @@ public class SoundLibraryActivity extends Activity implements View.OnClickListen
 		{
 
 		//If present1 was clicked, MainActivity should reload with new sounds, title, and labels.
-		case R.id.present1:
+			case R.id.present1:
 			i.putExtra("newOnesound", drumPkg.soundOne);
 			i.putExtra("newTwosound", drumPkg.soundTwo);
 			i.putExtra("newThreesound", drumPkg.soundThree);
@@ -85,8 +85,9 @@ public class SoundLibraryActivity extends Activity implements View.OnClickListen
 			i.putExtra("btnThreeLbl", drumPkg.buttonThreeLabel);
 			i.putExtra("btnFourLbl", drumPkg.buttonFourLabel);
 			startActivity(i);
+			break;
 
-		case R.id.present2:
+			case R.id.present2:
 			i.putExtra("newOnesound", moviePkg.soundOne);
 			i.putExtra("newTwosound", moviePkg.soundTwo);
 			i.putExtra("newThreesound", moviePkg.soundThree);
@@ -96,8 +97,9 @@ public class SoundLibraryActivity extends Activity implements View.OnClickListen
 			i.putExtra("btnThreeLbl", moviePkg.buttonThreeLabel);
 			i.putExtra("btnFourLbl", moviePkg.buttonFourLabel);
 			startActivity(i);
+			break;
 
-		case R.id.present3:
+			case R.id.present3:
 			i.putExtra("newOnesound", digitalPkg.soundOne);
 			i.putExtra("newTwosound", digitalPkg.soundTwo);
 			i.putExtra("newThreesound", digitalPkg.soundThree);
@@ -107,6 +109,7 @@ public class SoundLibraryActivity extends Activity implements View.OnClickListen
 			i.putExtra("btnThreeLbl", digitalPkg.buttonThreeLabel);
 			i.putExtra("btnFourLbl", digitalPkg.buttonFourLabel);
 			startActivity(i);
+			break;
 
 			
 		}

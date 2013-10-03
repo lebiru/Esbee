@@ -54,10 +54,19 @@
         android:id="@+id/soundLibrary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/button4"
         android:layout_below="@+id/button4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="25dp"
         android:onClick="openSoundLibrary"
         android:text="@string/soundLibrary" />
+
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/soundLibrary"
+        android:layout_alignLeft="@+id/button4"
+        android:minWidth="130dip"
+        android:text="@string/stop" />
 
 </RelativeLayout>

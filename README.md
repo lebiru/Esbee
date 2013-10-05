@@ -6,7 +6,7 @@ The Open Source Soundboard App for Android
 How to Get
 ==========
 
-From your Android device, go to [ninjabit.neocities.org/projects](ninjabit.neocities.org/projects) and click "Esbee". Your device will automatically download the app and install. 
+From your Android device, go to [ninjabit.neocities.org/projects.html](ninjabit.neocities.org/projects.html) and click "Esbee". Your device will automatically download the app and install. 
 
 Your device may throw a warning, asking for permission about downloading from Unknown Sources. Temporarily disable it so that Esbee could be downloaded, then re-enable it. 
 
